@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ParseUtilsTest {
 
     @Test
-    void parseJsonToStudentDirect_Success() throws ParameterIsNotJsonStringException {
+    void parseJsonToPersonDirect_Success() throws ParameterIsNotJsonStringException {
         String sampleString = "{'firstName':'Huseyin','lastName':'Ergin','birthYear':1986}";
         var resultingPerson = ParseUtils.parseJsonToStudentDirect(sampleString);
         assertEquals("Huseyin", resultingPerson.getFirstName());
@@ -17,7 +17,7 @@ class ParseUtilsTest {
     }
 
     @Test
-    void parseJsonToStudentDirect_SuccessWithDifferentKeyValues() throws ParameterIsNotJsonStringException {
+    void parseJsonToPersonDirect_SuccessWithDifferentKeyValues() throws ParameterIsNotJsonStringException {
         String sampleString = "{'first-name':'Huseyin','last-name':'Ergin','year':1986}";
         var resultingPerson = ParseUtils.parseJsonToStudentDirect(sampleString);
         assertEquals("Huseyin", resultingPerson.getFirstName());
@@ -26,7 +26,7 @@ class ParseUtilsTest {
     }
 
     @Test
-    void parseJsonToStudentDirect_NotJsonString() {
+    void parseJsonToPersonDirect_NotJsonString() {
         String sampleString = "__{'firstName':'Huseyin','lastName':'Ergin','birthYear':1986}";
         assertThrows(ParameterIsNotJsonStringException.class, () -> {
             var resultingPerson = ParseUtils.parseJsonToStudentDirect(sampleString);
@@ -34,9 +34,9 @@ class ParseUtilsTest {
     }
 
     @Test
-    void parseJsonToStudentManual_Success() throws ParameterIsNotJsonStringException {
+    void parseJsonToPersonManual_Success() throws ParameterIsNotJsonStringException {
         String sampleString = "{'firstName':'Huseyin','lastName':'Ergin','birthYear':1986}";
-        var resultingPerson = ParseUtils.parseJsonToStudentDirect(sampleString);
+        var resultingPerson = ParseUtils.parseJsonToStudentManual(sampleString);
         assertEquals("Huseyin", resultingPerson.getFirstName());
         assertEquals("Ergin", resultingPerson.getLastName());
         assertEquals(1986, resultingPerson.getBirthYear());

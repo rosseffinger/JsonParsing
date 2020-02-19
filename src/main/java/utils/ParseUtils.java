@@ -4,11 +4,11 @@ import domain.Person;
 
 public class ParseUtils {
 
-    public static Person parseJsonToStudentDirect(String jsonString) {
+    public static Person parseJsonToPersonDirect(String jsonString) {
         return null;
     }
 
-    public static Person parseJsonToStudentManual(String jsonString) {
+    public static Person parseJsonToPersonManual(String jsonString) {
         return null;
     }
 
