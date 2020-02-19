@@ -35,7 +35,7 @@ class ParseUtilsTest {
 
     @Test
     void parseJsonToPersonManual_Success() throws ParameterIsNotJsonStringException {
-        String sampleString = "{'firstName':'Huseyin','lastName':'Ergin','birthYear':1986}";
+        String sampleString = "{'name':'Huseyin','last':'Ergin','dob':1986}";
         var resultingPerson = ParseUtils.parseJsonToPersonManual(sampleString);
         assertEquals("Huseyin", resultingPerson.getFirstName());
         assertEquals("Ergin", resultingPerson.getLastName());
